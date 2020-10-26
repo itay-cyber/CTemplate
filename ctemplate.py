@@ -13,31 +13,67 @@ parser.add_argument("-hfile", "--headerfilecpp", action="store_true", help="Choo
 args = parser.parse_args()
 
 def createCPPTemplate(isheader, toGenerateSrcFolder):
-    print("Creating C++ template for directory " + os.getcwd() + ". Generated SRC folder: " + str(toGenerateSrcFolder))
+    print("Creating C++ template for directory " + os.getcwd() + ".\n\nGenerated SRC folder: " + str(toGenerateSrcFolder))
+    print("To make header file: " + str(args.headerfilecpp))
+    print("To make directory for header files: " + str(isheader))
 
-    try:
-        if (toGenerateSrcFolder):
-            os.mkdir("src")
-            os.system("touch src/main.cpp")
+    yn = input("Do these configurations look good to you? y/n: ")
+    
+    if (yn == "y"):
+        try:
+            if (toGenerateSrcFolder):
+                os.mkdir("src")
+                os.system("touch src/main.cpp")
 
-        else:
-            os.system("touch main.cpp")
-                         
-        if (isheader):
-            os.system("mkdir headers")
+            else:
+                os.system("touch main.cpp")
+                            
+            if (isheader):
+                os.system("mkdir headers")
 
-        if (isheader and args.headerfilecpp): 
-            os.system("cd headers & touch main.h")
+            if (isheader and args.headerfilecpp): 
+                os.system("touch headers/main.h")
 
-        elif (args.headerfilecpp):
-            os.system("touch main.h")
+            elif (args.headerfilecpp):
+                os.system("touch main.h")
 
-    except expression as identifier:
-        print("Failed to create template for c++")
-        print(identifier)
+            print("Entering your template cli...")
+
+            while True:
+                cmd = input("\nC++ template $: ")
+
+                if (cmd == "clear" or cmd == "cls" or cmd == "c"):
+                    os.system("clear")
+                
+                elif (cmd == ""):
+                    pass
+                
+                elif (cmd == "exit"):
+                    print("Thank you for using CTemplate! Bye!")
+                    input()
+                    exit()
+
+                else:
+                    print("C++ template: command not found: " + "\"{}\"".format(cmd))
+
+        except Exception as identifier:
+            print("Failed to create template for c++. Error occured: \n")
+            print(identifier)
+
+    elif (yn == "n"):
+        print("template not created")
+        input()
+
+    else:
+        print("error: you didn't enter y or n. Aborted")
+        exit(0)
+
+
 
 def createPythonTemplate(toGenerateSrcFolder):
     print("Python TEMPLATE")
+
+
 
 def createHTMLTemplate(withJS,toGenerateSrcFolder):
     print("HTML TEMPLATE")
