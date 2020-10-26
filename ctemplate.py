@@ -7,8 +7,9 @@ parser.add_argument("-t", "--template", help="Defines the template that you want
 
 parser.add_argument("-asrc", "--addsrc", action="store_true", help="Choose whether or not to add a SRC folder for your project")
 parser.add_argument("-cpphdir", "--cppheaderdirectory",action="store_true", help="Choose if you want to make a directory for header files (Only in C++ template)")
-parser.add_argument("-ajs", "--addjs", action="store_true", help="Choose if you want an main.js file in your HTML template")
+parser.add_argument("-ajs", "--addjavascript", action="store_true", help="Choose if you want an main.js file in your HTML template")
 parser.add_argument("-hfile", "--headerfilecpp", action="store_true", help="Choose if you want to create a header file for your main source file")
+parser.add_argument("-chjs", "--cssjshtml", action="store_true", help="Choose if you want a CSS-HTML-JS folder structure for your HTML template")
 
 args = parser.parse_args()
 
