@@ -11,9 +11,7 @@
 
 # Params for CTemplate
 
-1. ```python 
-    -asrc
-    ``` or `--addsrc`, adds a `src` directory for your project, and puts all source code into it
+1. `-asrc` or `--addsrc`, adds a `src` directory for your project, and puts all source code into it
 2. `-t` or `--template`, defines the template you want to make. Options: "cpp", "c++", "py", "python", "html", "python3". (Not case sensitive)
 3. `-hfile` or `--headerfilecpp`, makes a header file for your `main.cpp` file. Only applicable when C++ template selected
 4. `-cpphdir` or `--cppheaderdirectory`, creates a directory dedicated to your c++ header files (only for cpp template)
@@ -21,4 +19,4 @@
 6. `-chjs` or `--cssjshtml`, creates a HTML-CSS-JS folder structure for your HTML template (only html template)
 
 
-**Have Fun!**
+**Have Fun**
